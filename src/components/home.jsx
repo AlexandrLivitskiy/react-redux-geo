@@ -7,7 +7,12 @@ class Home extends React.Component{
     }
     render(){
         if (this.props.login) {
-            return <h2>Welcome this.props.login = {this.props.login} </h2>;
+            return (
+                <div>
+                <h2>Welcome this.props.login = {this.props.login} </h2>
+                <h3>Markers {this.props.markers} </h3>
+                </div>
+            );
         }
         return <h2>Start this.props.login = {this.props.login} </h2>;
     }

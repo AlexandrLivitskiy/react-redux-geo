@@ -9,6 +9,7 @@ import About from './components/about.jsx';
 import NotFound from './components/notfound.jsx';
 var connect = require("react-redux").connect;
 var actions = require("./actions/actions.jsx");
+import { withRouter } from 'react-router-dom'
 
 class App extends Component {
   render() {
@@ -42,4 +43,4 @@ function mapStateToProps(state) {
     };
 }
 
-module.exports = connect(mapStateToProps, actions)(App);
+module.exports = withRouter(connect(mapStateToProps, actions)(App));
