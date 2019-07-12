@@ -1,7 +1,23 @@
 import React from 'react';
+var connect = require("react-redux").connect;
 
-export default class Home extends React.Component{
+class Home extends React.Component{
+    constructor(props) {
+        super(props);
+    }
     render(){
-        return <h2>Start</h2>;
+        if (this.props.login) {
+            return <h2>Welcome this.props.login = {this.props.login} </h2>;
+        }
+        return <h2>Start this.props.login = {this.props.login} </h2>;
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        markers: state.get("markers"),
+        login: state.get("login")
+    };
+}
+
+module.exports = connect(mapStateToProps)(Home);
