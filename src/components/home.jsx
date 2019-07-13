@@ -2,15 +2,12 @@ import React from 'react';
 var connect = require("react-redux").connect;
 
 class Home extends React.Component{
-    constructor(props) {
-        super(props);
-    }
     render(){
         if (this.props.login) {
             return (
                 <div>
                 <h2>Welcome this.props.login = {this.props.login} </h2>
-                <h3>Markers {this.props.markers} </h3>
+                {this.props.markers.map(item => <h3> {item} </h3>)}
                 </div>
             );
         }

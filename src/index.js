@@ -7,7 +7,7 @@ var redux = require("redux");
 var Provider = require("react-redux").Provider;
 var reducer = require("./reducer.jsx");
 
-var store = redux.createStore(reducer);
+let store = redux.createStore(reducer);
 
 store.dispatch({
     type: "SET_STATE",
