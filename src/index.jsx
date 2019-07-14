@@ -12,8 +12,13 @@ let store = redux.createStore(reducer);
 store.dispatch({
     type: "SET_STATE",
     state: {
-        markers: [ "Marker1", "Marker2", "Marker3" ],
-        login: true
+        showedMarkers: [],
+        savedMarkers: [],
+        login: false,
+        map: {
+            zoom: 12,
+            location: [46.4782, 30.7399]
+        }
     }
 });
 

@@ -1,25 +1,30 @@
 import React from 'react';
+var actions = require("../actions/actions.jsx");
 var connect = require("react-redux").connect;
 
 class Home extends React.Component{
     render(){
-        if (this.props.login) {
+        if (this.props.isLogin) {
             return (
                 <div>
-                <h2>Welcome this.props.login = {this.props.login} </h2>
-                {this.props.markers.map(item => <h3> {item} </h3>)}
+                <br></br>
+                <h1>Welcome</h1>
                 </div>
             );
         }
-        return <h2>Start this.props.login = {this.props.login} </h2>;
+        return (
+            <div>
+                <h2>Login</h2>
+                <button onClick={() => this.props.login(true)}>LOGIN</button>
+            </div>
+        );
     }
 }
 
 function mapStateToProps(state) {
     return {
-        markers: state.get("markers"),
-        login: state.get("login")
+        isLogin: state.get("login")
     };
 }
 
-module.exports = connect(mapStateToProps)(Home);
+export default connect(mapStateToProps, actions)(Home);

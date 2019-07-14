@@ -3,15 +3,30 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "immutable": "^3.8.2",
+    "pigeon-maps": "^0.13.0",
+    "pigeon-marker": "^0.3.4",
+    "pigeon-overlay": "^0.2.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-router-dom": "^4.3.1",
-    "immutable": "^3.8.2",
     "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
     "redux": "^4.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.0",
+    "css-loader": "^3.0.0",
+    "style-loader": "^0.23.1",
+    "url-loader": "^2.0.1",
+    "webpack": "^4.20.0",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9"
+  },
   "scripts": {
-
+    "dev": "webpack-dev-server --hot --open",
+    "build": "webpack"
   }
 }
