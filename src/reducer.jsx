@@ -14,12 +14,14 @@ var reducer = function(state = Map(), action) {
             return state.update("savedMarkers", (savedMarkers) => savedMarkers = action.markers);
         case "SHOW_MARKERS":
             return state.update("showedMarkers", (showedMarkers) => showedMarkers = action.markers);
-        case "DELETE_MARKER":
-            return state.update("markers",
-                (markers) => markers.filterNot(
-                    (item) => item === action.marker
-                )
-            );
+        case "PHARMACIES":
+            return state.update("pharmacies", (pharmacies) => pharmacies = action.pharmacies);
+        case "GAS":
+            return state.update("gas", (gas) => gas = action.gas);
+        case "SCHOOLS":
+            return state.update("schools", (schools) => schools = action.schools);
+        case "RESTAURANTS":
+            return state.update("restaurants", (restaurants) => restaurants = action.restaurants);
     }
     return state;
 }

@@ -14,6 +14,10 @@ store.dispatch({
     state: {
         showedMarkers: [],
         savedMarkers: [],
+        pharmacies: [],
+        gas: [],
+        schools: [],
+        restaurants: [],
         login: false,
         map: {
             zoom: 12,

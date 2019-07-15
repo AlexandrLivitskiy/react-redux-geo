@@ -16,12 +16,6 @@ let showMarkers = function (markers) {
         markers: markers
     }
 };
-let deleteMarker = function (marker) {
-    return {
-        type: "DELETE_MARKER",
-        marker
-    }
-};
 let zooming = function (value) {
     return {
         type: "ZOOM",
@@ -34,5 +28,29 @@ let location = function (value) {
         mapLocation: {location: value}
     }
 };
+let pharmacies = function (pharmacies) {
+    return {
+        type: "PHARMACIES",
+        pharmacies: pharmacies
+    }
+};
+let gas = function (gas) {
+    return {
+        type: "GAS",
+        gas: gas
+    }
+};
+let schools = function (schools) {
+    return {
+        type: "SCHOOLS",
+        schools: schools
+    }
+};
+let restaurants = function (restaurants) {
+    return {
+        type: "RESTAURANTS",
+        restaurants: restaurants
+    }
+};
 
-module.exports = {login, saveMarkers, showMarkers, deleteMarker, zooming, location};
+module.exports = {login, saveMarkers, showMarkers, zooming, location, pharmacies, gas, schools, restaurants};
