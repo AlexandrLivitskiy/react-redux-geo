@@ -15,7 +15,7 @@ class Main extends React.Component {
         let markers = [];
         this.props.showedMarkers.map(item => markers.push(item));
         return (
-            <div>
+            <div onWheel = {(e) => this.props.zooming(this.props.map.get("zoom") - e.deltaY/100)}>
                 <br></br>
                 <Map
                     center={this.props.map.get("location").toArray()}
