@@ -8,6 +8,8 @@ var reducer = function(state = Map(), action) {
             return state.update("map", (map) => map.merge(action.zoom));
         case "LOCATION":
             return state.update("map", (map) => map.merge(action.mapLocation));
+        case "GEO":
+            return state.update("map", (map) => map.merge(action.mapGeo));
         case "LOG_IN":
             return state.update("login", (login) => login = action.isLogin);
         case "SAVE_MARKERS":

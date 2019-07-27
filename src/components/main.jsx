@@ -7,7 +7,7 @@ var connect = require("react-redux").connect;
 
 class Main extends React.Component {
     render() {
-        let geolocation = [46.4782, 30.7399];
+        navigator.geolocation.getCurrentPosition((pos) => this.props.geo([pos.coords.latitude, pos.coords.longitude]));
         let pharmacies = [[46.4770, 30.7382], [46.4716, 30.7365]];
         let gas = [[46.4736, 30.7058], [46.4931, 30.7135]];
         let schools = [[46.4796, 30.7356], [46.4807, 30.7400]];
@@ -28,7 +28,7 @@ class Main extends React.Component {
                         this.props.showMarkers(markers);
                     }}
                 >
-                    <Marker anchor={geolocation}/>
+                    <Marker anchor={this.props.map.get("geo").toArray()}/>
                     {this.props.showedMarkers.map(item => <Marker key={item} anchor={item} onClick={e => {
                         markers = markers.filter(i => i.toString() !== e.anchor.toString());
                         this.props.showMarkers(markers);
@@ -49,7 +49,7 @@ class Main extends React.Component {
                 <br></br>
                 <button onClick={() => this.props.zooming(this.props.map.get("zoom") - 1)}>ZOOM OUT</button>
                 <button onClick={() => this.props.zooming(this.props.map.get("zoom") + 1)}>ZOOM IN</button>
-                <button onClick={() => this.props.location(geolocation)}>Geolocation</button>
+                <button onClick={() => this.props.location(this.props.map.get("geo"))}>Geolocation</button>
                 <button onClick={() => this.props.saveMarkers(markers)}>Save</button>
                 <button onClick={() => {
                     markers = markers.concat(this.props.savedMarkers.filter(i => markers.map(item => item.toString()).indexOf(i.toString()) === -1));

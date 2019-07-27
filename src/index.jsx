@@ -21,6 +21,7 @@ store.dispatch({
         login: false,
         map: {
             zoom: 12,
+            geo: [51, 0],
             location: [46.4782, 30.7399]
         }
     }

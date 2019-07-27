@@ -28,6 +28,12 @@ let location = function (value) {
         mapLocation: {location: value}
     }
 };
+let geo = function (value) {
+    return {
+        type: "GEO",
+        mapGeo: {geo: value}
+    }
+};
 let pharmacies = function (pharmacies) {
     return {
         type: "PHARMACIES",
@@ -53,4 +59,4 @@ let restaurants = function (restaurants) {
     }
 };
 
-module.exports = {login, saveMarkers, showMarkers, zooming, location, pharmacies, gas, schools, restaurants};
+module.exports = {login, saveMarkers, showMarkers, zooming, location, geo, pharmacies, gas, schools, restaurants};
